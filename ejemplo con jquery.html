@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ES6</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+<body>
+	<div class="jumbotron">
+		<center><h1>VIVA EL ECMASCRIPT2016 !</h1></center>
+	</div>
+	<div class="container">
+		<button class="btn btn-primary" id="btn1">click ;)</button>
+		<p id="par"></p>
+	</div>
+	<script src="jquery-3.2.0.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			let data=[["christian",20],["luis",28],["jessy",30]];
+			let mapita=new Map(data);
+			let c=1;
+			$("#btn1").click(function(){
+				let txt=`<table class='table table-hover'><thead><tr><th>#</th><th>nombre</th><th>edad</th></tr></thead><tbody>`;
+				for(let [key,value] of mapita.entries())
+				{
+					txt+=`<tr><th>${c}</th><td>${key}</td><td>${value}</td></tr>`;
+					c++;
+				}
+				c=1;
+				txt+=`</tbody></table>`;
+				$("#par").after(txt);
+			});
+		});
+	</script>
+</body>
+</html>

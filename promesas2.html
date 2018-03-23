@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promesas</title>
+</head>
+<body>
+    <script>
+        let promesa = new Promise((resolve,reject)=>{ //declaracion de una promesa (resolve,reject) por convencion
+            setTimeout(()=>{ //proceso que se hara despues de 3 segundos
+                console.log('proceso asincrono');
+                resolve("chris"); //aca decidimos si llamar a resolve() o reject()
+                //solo admite un unico parametro
+                //reject();
+            },3000);
+        });
+
+        /*promesa.then(resolve=>{ //con then() llamamos a lo que es el resolve()
+        console.log('todo OK');
+        },reject=>{
+        console.error('todo MAL');
+        }); */
+        /*promesa.then((nombre)=>{
+            console.log('todo bien',nombre);
+        },(nombre)=>{
+            console.error(nombre,'muy mal');
+        });*/
+
+        /*promesa
+        .then((nombre)=>{
+            console.log('todo bien',nombre);
+        })
+        .catch((nombre)=>{ //con catch llamamos al reject()
+            console.error(nombre,'todo muy MAL!');
+        });*/
+
+        promesa
+        .then((nombre)=>{ //cuando hay promesas anidadas, si es que se envia un parametro solo lo recibe el primer then()  
+            console.log('todo bien',nombre);
+        })
+        .then(()=>{ //los demas ya no saben del parametro
+            console.log('ahora sin parametro');
+        })
+        .then(()=>{
+            console.log('todo bien');
+        });
+    </script>
+</body>
+</html>

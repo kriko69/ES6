@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ES6</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+<body>
+	<div class="jumbotron">
+		<center><h1>VIVA EL ECMASCRIPT2016 !</h1></center>
+	</div>
+	<script src="jquery-3.2.0.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script type="text/javascript">
+		let auto = new Map(); //definimos un mapa
+		auto.set('marca','nissan'); //con set() agregamos un nuevo valor
+		auto.set('color','verde');
+		auto.set('modelo',2016);
+		console.log(auto);
+		console.log(auto.size); //.size muestra la cantidad de datos en el mapa
+		console.log(auto.get('color')); //con get(key) obtenemos el valor de esa key
+		auto.delete('color'); //con delete(key) eliminamos la key  y su dicho valor del mapa
+		console.log(auto.has('color')); //con has(key) verificamos si una clave existe en el mapa (booleano)
+		console.log(auto);
+		for(let[key,value] of auto.entries()) //con entries() obtenemos todos los datos del mapa
+		{
+			console.log(key+" --> "+value);
+		}
+		auto.clear(); //con clear() borramos todo lo del mapa
+		console.log(auto);
+		let data = [["carlos",20],["pedro",19],["chris",15]];
+		let personas = new Map(data); //podemos definir un mapa pasandole sus dtos contenidos en un array
+		console.log(personas);
+	</script>
+</body>
+</html>

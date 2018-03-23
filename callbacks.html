@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Callbacks</title>
+</head>
+<body>
+    <script>
+
+        function saludo(callback) //le pasamos una funcion como parametro a una funcion
+        {
+            console.log('espera...');
+            callback('chris'); //debe si o si ser invocada aca adentro con sus parametros  
+        }
+        function ejecutar(name) //funcion callback
+        {
+            setTimeout(()=>{
+                console.log('hola '+name+' mucho gusto');
+            },3000);
+        }
+
+        saludo(ejecutar); //llamamos a la funcion y le pasamos la funcion callback
+
+    </script>
+</body>
+</html>

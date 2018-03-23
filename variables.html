@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ES6</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+<body>
+	<div class="jumbotron">
+		<center><h1>VIVA EL ECMASCRIPT2016 !</h1></center>
+	</div>
+	<script src="jquery-3.2.0.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script type="text/javascript">
+		let nombre = 'carlos'; //let es parecido a var solo que si se puede declarar varias variable
+		//con el mismo nombre y dependiendo el scope tiene un determinado valor
+		if (true) {
+			let nombre = 'chris';
+			console.log(nombre);
+		}
+		console.log(nombre);
+
+		const PI=3.1415; //con const se crea variables fijas que no pueden cambiar su valor y dependiendo el scope se tiene un valor diferente si se declara de nuevo, se declara siempre en mayuscula y  se define el valor al crearlo
+		if (true) {
+			const PI=66.6;
+			console.log(PI);
+		}
+		console.log(PI);
+	</script>
+</body>
+</html>

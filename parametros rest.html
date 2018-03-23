@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ES6</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+<body>
+	<div class="jumbotron">
+		<center><h1>VIVA EL ECMASCRIPT2016 !</h1></center>
+	</div>
+	<script src="jquery-3.2.0.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script type="text/javascript">
+		//con rest podemos indicar a una funcion que tiene parametros obligatorios y otros opcionales
+
+		function almacenar(array1,...numeros){ //con ... indicamos que habra mas de un parametro pero opcional, y el array1 es obligatorio
+			//EL PARAMETRO REST SIEMPRE TIENE QUE IR COMO ULTIMO PARAMETRO
+			for(let i=0;i<numeros.length;i++)
+			{
+				array1.push(numeros[i]);
+			}
+			console.log(array1);
+		}
+
+		let numeros=[];
+		almacenar(numeros,1,2,3,4,5,6);
+		numeros.length=0; //vaciar el array
+		almacenar(numeros,1,2,3);
+		numeros.length=0;
+		almacenar(numeros,1,2,3,4,5);
+		numeros.length=0;
+		almacenar(numeros,1,2,3,4,5,6,7,8,9,9,8,7,6,5,4,3,2,1);
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ES6</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+<body>
+	<div class="jumbotron">
+		<center><h1>VIVA EL ECMASCRIPT2016 !</h1></center>
+	</div>
+	<script src="jquery-3.2.0.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function saludar(nombre,tiempo)
+		{
+			//nombre = nombre || "pepe"; //forma1 para poner valores por defecto si no pone ningun valor en la funcion
+			nombre = (typeof nombre !== "undefined" ? nombre : "pepito"); //forma2  para poner valor por defecto (recomendada)
+			setTimeout(function(){
+				console.log("hola querido "+nombre);
+			},tiempo);
+		}
+		saludar();
+
+		//AHORA CON ES6
+		function saludar2(nombre='christian',tiempo=2000) //se puede poner los valores por defecto en el mismo paso de parametros 
+		{
+			setTimeout(function(){
+				console.log(`hola ${nombre} eres mi amigo`);
+			},tiempo);
+		}
+		saludar2();
+		saludar2('jose');
+
+		//-------------------------------------------------------------
+
+		function saludar3(saludo = function(){console.log('hola a todos los negros');})
+		{
+			saludo();
+		}
+		saludar3();
+	</script>
+</body>
+</html>
